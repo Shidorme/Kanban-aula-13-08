@@ -96,7 +96,7 @@ export const useBoardData = (user: UserProfile | null, isDemoMode: boolean) => {
 
     // Timeout de resiliência de 3.5s
     const loadTimeoutId = setTimeout(() => {
-      if (isMounted && isLoading) {
+      if (isMounted) {
         console.warn('Timeout no carregamento de dados do Firestore/Storage. Exibindo dados locais/padrão.');
         const localKey = getStorageKey(user.uid);
         const cached = localStorage.getItem(localKey);
